@@ -30,5 +30,7 @@ module Myapp
       g.helper false
       g.test_framework nil
     end
+
+    config.i18n.default_locale = :ja # デフォルトの言語を日本語に設定
   end
 end
