@@ -14,3 +14,7 @@ ja:
     san: さん
     account_detail: アカウント情報
     logout: ログアウト
+  tops:
+    index:
+      sign_up_for: アカウント登録
+      login: ログイン
