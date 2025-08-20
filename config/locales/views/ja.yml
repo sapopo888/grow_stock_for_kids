@@ -1,0 +1,20 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+  header:
+    sign_up_for: アカウント登録
+    login: ログイン
+    kids: 登録者一覧
+    stocks: ストック一覧
+    my_page: マイページ
+    san: さん
+    account_detail: アカウント情報
+    logout: ログアウト
+  tops:
+    index:
+      sign_up_for: アカウント登録
+      login: ログイン
