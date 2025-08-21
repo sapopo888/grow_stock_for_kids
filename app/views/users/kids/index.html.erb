@@ -1,1 +1,14 @@
-まだ何もありません
+<% if @kids.present? %>
+  <% @kids.each do |kid| %>
+    <%= kid.name %>
+    <% if kid.gender == male %>
+      <div class='text-blue-500'><%= kid.gender%></div>
+    <% elsif kid.gender == female %>
+      <div class='text-pink-500'><%= kid.gender%></div>
+    <% else %>
+      <div class='text-gray-500'><%= kid.gender%></div>
+    <% end %>
+  <% end %>
+<% else %>
+  登録されている子供はいません
+<% end %>
