@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   let hideTimeout; // タイマーを管理する変数
 
   const dropdownContainer = document.getElementById("dropdown-container");
