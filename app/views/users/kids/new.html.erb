@@ -10,29 +10,15 @@
           <%= f.label :name %> :<br />
           <%= f.text_field :name, class: 'w-full ring rounded ring-gray-300 mb-2 p-1' %>
         </div>
-<!--
-        <div class='mb-2'>
-          <%= f.label :gender %> :<br />
-          <%= f.select :gender, [[t('kid.new.male'), t('kid.new.male')],[t('kid.new.female'), t('kid.new.female')]], include_blank: "選択してください" %>
-        </div>
--->
         
         <%= f.label :gender, t('activerecord.attributes.kid.gender') %> :<br />
         <div class='flex space-x-3'>
-          <div>
-            <%= f.radio_button :gender, :unknown %>
-            <%= f.label :gender_unknown, t('activerecord.attributes.enums.kid.gender.unknown') %>
-          </div>
-
-          <div>
-            <%= f.radio_button :gender, :male %>
-            <%= f.label :gender_male, t('activerecord.attributes.enums.kid.gender.male') %>
-          </div>
-
-          <div>
-            <%= f.radio_button :gender, :female %>
-            <%= f.label :gender_female, t('activerecord.attributes.enums.kid.gender.female') %>
-          </div>
+          <% Kid.genders.keys.each do |key| %>
+            <div>
+              <%= f.radio_button :gender, key %>
+              <%= f.label "gender_#{key}", t("activerecord.enums.kid.gender.#{key}") %>
+            </div>
+          <% end %>
         </div>
 
 
