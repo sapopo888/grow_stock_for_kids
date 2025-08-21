@@ -1,16 +1,25 @@
-<div>
-  <h1>子供の登録</h1>
+<div class='flex flex-col items-center justify-center h-screen md:bg-gray-100'>
+  <div class='w-full md:w-1/2 md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h2 class='text-center text-2xl font-semibold mb-12'>子供の登録</h2>
   
-  <%= form_with model: @kid do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <div class='w-full flex-wrap whitespace-nowrap'>
+      <%= form_with model: @kid do |f| %>
+        <%= render "users/shared/error_messages", resource: @kid %>
+
+        <div class='mb-2'>
+          <%= f.label :name %> :<br />
+          <%= f.text_field :name, class: 'w-full ring rounded ring-gray-300 mb-2 p-1' %>
+        </div>
+
+        <div class='mb-2'>
+          <%= f.label :gender %> :<br />
+          <%= f.select :gender, [["男性", "男性"],["女性", "女性"]], include_blank: "選択してください" %>
+        </div>
+
+        <div class="text-center mt-8">
+          <%= f.submit nil %>
+        </div>
+      <% end %>
     </div>
-  
-    <div>
-      <%= f.select :gender, [["男性", "男性"],["女性", "女性"]], include_blank: "選択してください" %>
-    </div>
-  
-    <%= f.submit nil %>
-  <% end %>
+  </div>
 </div>
