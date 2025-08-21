@@ -40,8 +40,6 @@
           <%= f.submit "Update", class: 'w-full border border-gray-400 hover:border-gray-500 px-4 py-1 rounded bg-blue-200 hover:bg-blue-300' %>
         </div>
       <% end %>
-      <h3>Cancel my account</h3>
-      <div><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'w-full border border-gray-400 hover:border-gray-500 px-4 py-1 rounded bg-red-200 hover:bg-red-300' %></div>
       <div class='mt-2 text-center hover:text-blue-800'><%= link_to "Back", :back %></div>
     </div>
   </div>
