@@ -13,11 +13,11 @@
 
         <div class='mb-2'>
           <%= f.label :gender %> :<br />
-          <%= f.select :gender, [["男性", "男性"],["女性", "女性"]], include_blank: "選択してください" %>
+          <%= f.select :gender, [[t('kid.new.male'), t('kid.new.male')],[t('kid.new.female'), t('kid.new.female')]], include_blank: "選択してください" %>
         </div>
 
         <div class="text-center mt-8">
-          <%= f.submit nil %>
+          <%= f.submit nil, class: 'w-full border border-gray-400 hover:border-gray-500 px-4 py-1 rounded bg-blue-200 hover:bg-blue-300' %>
         </div>
       <% end %>
     </div>

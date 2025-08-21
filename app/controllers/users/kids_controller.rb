@@ -12,11 +12,11 @@ class Users::KidsController < ApplicationController
   def create
     @kid = current_user.kid.build(kid_params)
     if @kid.save
-      flash[:notice] = '登録に成功しました'
-      redirect_to kids_path
+      flash[:notice] =  t('defaults.flash_message.registered', item: Kid.model_name.human)
+      redirect_to kids_path, status: :see_other
     else
-      flash.now[:alert] = '登録に失敗しました'
-      render :new
+      flash.now[:alert] = t('defaults.flash_message.not_registered', item: Kid.model_name.human)
+      render :new, status: :unprocessable_entity
     end
   end
 

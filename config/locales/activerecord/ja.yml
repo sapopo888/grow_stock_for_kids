@@ -1,1 +1,8 @@
 ja:
+  activerecord:
+    models:
+      kid: 子供
+    attributes:
+      kid:
+        name: 名前
+        gender: 性別

@@ -1,7 +1,11 @@
 ja:
+  defaults:
+    flash_message:
+      registered: "%{item}を登録しました"
+      not_registered: "%{item}を登録できませんでした"
   helpers:
     submit:
-      create: 登録
+      create: 登録する
       submit: 保存
       update: 更新
     label:
@@ -18,3 +22,8 @@ ja:
     index:
       sign_up_for: アカウント登録
       login: ログイン
+  kid:
+    new:
+      title: 子供の登録
+      male: 男性
+      female: 女性
