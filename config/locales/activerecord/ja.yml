@@ -6,3 +6,9 @@ ja:
       kid:
         name: 名前
         gender: 性別
+      enums:
+        kid:
+          gender:
+            male: 男の子
+            female: 女の子
+            unknown: 未設定
