@@ -94,10 +94,11 @@ ja:
     registrations:
       destroyed: アカウントを削除しました。またのご利用をお待ちしております。
       edit:
+        title: アカウント情報変更
         are_you_sure: 本当によろしいですか？
         cancel_my_account: アカウント削除
         currently_waiting_confirmation_for_email: '%{email} の確認待ち'
-        leave_blank_if_you_don_t_want_to_change_it: 空欄のままなら変更しません
+        leave_blank_if_you_don_t_want_to_change_it: パスワードを変更しない場合は空欄のままにしてください
         title: "%{resource}編集"
         unhappy: 気に入りません
         update: 更新
@@ -129,7 +130,7 @@ ja:
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
       minimum_password_length:
-        other: "（英数 %{count} 文字以上）"
+        other: "英数 %{count} 文字以上で設定してください"
     unlocks:
       new:
         resend_unlock_instructions: アカウントのロック解除方法を再送する
