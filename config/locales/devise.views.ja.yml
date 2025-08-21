@@ -115,7 +115,8 @@ ja:
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
-        sign_in: ログイン
+        title: ログイン
+        sign_in: ログインする
       signed_in: ログインしました。
       signed_out: ログアウトしました。
     shared:
