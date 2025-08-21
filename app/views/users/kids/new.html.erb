@@ -1,0 +1,14 @@
+<h1>子供の登録</h1>
+
+<%= form_with model: @kid do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <%= f.submit nil %>
