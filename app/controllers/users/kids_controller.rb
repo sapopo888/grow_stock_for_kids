@@ -12,10 +12,10 @@ class Users::KidsController < ApplicationController
   def create
     @kid = current_user.kid.build(kid_params)
     if @kid.save
-      flash[:notice] =  t('defaults.flash_message.registered', item: Kid.model_name.human)
+      flash[:notice] =  t("defaults.flash_message.registered", item: Kid.model_name.human)
       redirect_to kids_path, status: :see_other
     else
-      flash.now[:alert] = t('defaults.flash_message.not_registered', item: Kid.model_name.human)
+      flash.now[:alert] = t("defaults.flash_message.not_registered", item: Kid.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,6 +23,6 @@ class Users::KidsController < ApplicationController
   private
 
   def kid_params
-    params.require(:kid).permit( :name, :gender )
+    params.require(:kid).permit(:name, :gender)
   end
 end
