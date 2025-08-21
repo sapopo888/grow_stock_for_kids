@@ -8,8 +8,8 @@ ja:
   header:
     sign_up_for: アカウント登録
     login: ログイン
-    kids: 登録者一覧
-    stocks: ストック一覧
+    register_kids: 子供を追加
+    register_stocks: ストックを追加
     my_page: マイページ
     san: さん
     account_detail: アカウント情報
