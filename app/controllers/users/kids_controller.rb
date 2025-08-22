@@ -2,7 +2,7 @@ class Users::KidsController < ApplicationController
    before_action :authenticate_user!
 
   def index
-    @kids = current_user.kid.find(params[:id])
+    @kids = current_user.kid
   end
 
   def new
