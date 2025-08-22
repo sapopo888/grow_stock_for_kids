@@ -23,5 +23,8 @@ ja:
       sign_up_for: アカウント登録
       login: ログイン
   kid:
+    index:
+      title: 登録済み子供一覧
+      no_kids: 登録されている子供はいません
     new:
       title: 子供の登録
