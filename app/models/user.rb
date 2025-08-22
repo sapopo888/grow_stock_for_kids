@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :status, presence: true
   enum :status, { normal: 0, withdrawn: 1 }
+  has_many :kid
 end

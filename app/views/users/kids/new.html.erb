@@ -1,0 +1,31 @@
+<div class='flex flex-col items-center justify-center h-screen'>
+  <div class='w-full md:w-1/2 md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h2 class='text-center text-2xl font-semibold mb-12'>子供の登録</h2>
+  
+    <div class='w-full flex-wrap whitespace-nowrap'>
+      <%= form_with model: @kid do |f| %>
+        <%= render "users/shared/error_messages", resource: @kid %>
+
+        <div class='mb-2'>
+          <%= f.label :name %> :<br />
+          <%= f.text_field :name, class: 'w-full ring rounded ring-gray-300 mb-2 p-1' %>
+        </div>
+        
+        <%= f.label :gender, t('activerecord.attributes.kid.gender') %> :<br />
+        <div class='flex space-x-3'>
+          <% Kid.genders.keys.each do |key| %>
+            <div>
+              <%= f.radio_button :gender, key %>
+              <%= f.label "gender_#{key}", t("activerecord.enums.kid.gender.#{key}") %>
+            </div>
+          <% end %>
+        </div>
+
+
+        <div class="text-center mt-8">
+          <%= f.submit nil, class: 'w-full border border-gray-400 hover:border-gray-500 px-4 py-1 rounded bg-blue-200 hover:bg-blue-300' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

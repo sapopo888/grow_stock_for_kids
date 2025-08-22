@@ -1,0 +1,43 @@
+<div class='flex m-20 justify-center h-screen'>
+  <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h1 class='text-center text-2xl font-semibold mb-12'><%= t('kid.index.title') %></h1>
+  
+    <table class='w-full border-b'>
+      <tr class='bg-blue-100'>
+        <th>名前</th>
+        <th>ストック</th>
+        <th>アクション</th>
+      </tr>
+    </table>
+  
+    <div class=''>
+      <% if @kids.present? %>
+        <% @kids.each do |kid| %>
+          <div class='flex m-1'>
+            <tr>
+              <span class='px-2'>
+                <td>
+                  <% if kid.gender == "male" %>
+                    <span class='text-blue-500'><%= kid.name %></span>
+                  <% elsif kid.gender == "female" %>
+                    <span class='text-pink-500'><%= kid.name %></span>
+                  <% else %>
+                    <span class='text-gray-500'><%= kid.name %></span>
+                  <% end %>
+                </td>
+              </span>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+              <%= link_to '編集', "#", class: 'border rounded px-2 mr-2 bg-blue-100 hover:text-white hover:bg-blue-600' %>
+              <%= link_to '削除', "#", class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
+            </tr>
+          </div>
+        <% end %>
+      <% else %>
+        <%= t('kid.index.no_kids') %>
+      <% end %>
+    </div>
+  </div>
+</div>

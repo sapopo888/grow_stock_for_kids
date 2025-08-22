@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tops#index"
+  resources :kids, controller: "users/kids", only: %i[index new create]
 end

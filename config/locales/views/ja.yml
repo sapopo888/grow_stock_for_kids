@@ -1,15 +1,20 @@
 ja:
+  defaults:
+    flash_message:
+      registered: "%{item}を登録しました"
+      not_registered: "%{item}を登録できませんでした"
   helpers:
     submit:
-      create: 登録
+      create: 登録する
       submit: 保存
       update: 更新
     label:
   header:
     sign_up_for: アカウント登録
     login: ログイン
-    kids: 登録者一覧
-    stocks: ストック一覧
+    registered_kids: 登録済み子供一覧
+    register_kids: 子供を追加
+    register_stocks: ストックを追加
     my_page: マイページ
     san: さん
     account_detail: アカウント情報
@@ -18,3 +23,9 @@ ja:
     index:
       sign_up_for: アカウント登録
       login: ログイン
+  kid:
+    index:
+      title: 登録済み子供一覧
+      no_kids: 登録されている子供はいません
+    new:
+      title: 子供の登録

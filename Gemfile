@@ -51,6 +51,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rubocop"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
