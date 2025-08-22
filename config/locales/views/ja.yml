@@ -12,6 +12,7 @@ ja:
   header:
     sign_up_for: アカウント登録
     login: ログイン
+    registered_kids: 登録済み子供一覧
     register_kids: 子供を追加
     register_stocks: ストックを追加
     my_page: マイページ
