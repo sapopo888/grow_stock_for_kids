@@ -3,6 +3,7 @@ ja:
     flash_message:
       registered: "%{item}を登録しました"
       not_registered: "%{item}を登録できませんでした"
+    edit: 編集する
   helpers:
     submit:
       create: 登録する
@@ -12,8 +13,8 @@ ja:
   header:
     sign_up_for: アカウント登録
     login: ログイン
-    registered_kids: 登録済み子供一覧
-    register_kids: 子供を追加
+    registered_kids: 登録者一覧
+    register_kids: 登録者を追加
     register_stocks: ストックを追加
     my_page: マイページ
     san: さん
@@ -25,7 +26,12 @@ ja:
       login: ログイン
   kid:
     index:
-      title: 登録済み子供一覧
-      no_kids: 登録されている子供はいません
+      title: 登録者一覧
+      no_kids: 登録者はいません
     new:
-      title: 子供の登録
+      title: 登録者を追加
+    edit:
+      title: 登録者の編集
+      name: 名前
+      gender: 性別
+
