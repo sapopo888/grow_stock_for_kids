@@ -30,8 +30,10 @@ ja:
       no_kids: 登録者はいません
     new:
       title: 登録者を追加
+    select_edit_kid:
+      title: 編集する登録者を選択してください
     edit:
-      title: 登録者の編集
+      title: 登録者情報の編集
       name: 名前
       gender: 性別
 
