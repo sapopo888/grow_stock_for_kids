@@ -20,6 +20,10 @@ class Users::KidsController < ApplicationController
     end
   end
 
+  def select_edit_kid
+    @kids = current_user.kid
+  end
+
   def edit
     @kid = current_user.kid.find(params[:id])
   end
