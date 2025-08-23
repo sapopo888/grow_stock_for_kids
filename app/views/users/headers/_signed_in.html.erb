@@ -2,6 +2,7 @@
   <div class='justify-items-center md:justify-items-end'>
     <div class='flex items-center md:mr-12 text-white space-x-4'>
       <%= link_to t('header.registered_kids'), kids_path, class: 'hover:text-gray-200' %>
+      <%= link_to '登録者を編集', kids_select_edit_kid_path, class: 'hover:text-gray-200' %>
       <%= link_to t('header.register_kids'), new_kid_path, class: 'hover:text-gray-200' %>
       <%= link_to t('header.register_stocks'), '#', class: 'hover:text-gray-200' %>
       <div class='relative inline-block' id='dropdown-container'>
