@@ -28,6 +28,17 @@ class Users::KidsController < ApplicationController
     @kid = current_user.kid.find(params[:id])
   end
 
+  def update
+    @kid = current_user.kid.find(params[:id])
+    if @kid.update(kid_params)
+      flash[:notice] = '登録者情報が更新されました'
+      redirect_to kids_select_edit_kid_path, status: :see_other
+    else
+      flash.now[:alert] = '登録者情報の更新に失敗しました'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def kid_params
