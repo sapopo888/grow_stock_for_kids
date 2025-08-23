@@ -39,6 +39,12 @@ class Users::KidsController < ApplicationController
     end
   end
 
+  def destroy
+    @kid = current_user.kid.find(params[:id])
+    @kid.destroy!
+    redirect_to kids_path, notice: t("defaults.flash_message.deleted", item: Kid.model_name.human)
+  end
+
   private
 
   def kid_params

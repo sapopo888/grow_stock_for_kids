@@ -26,7 +26,7 @@
                 </td>
                 <td>
                   <%= link_to '編集', "#", class: 'border rounded px-2 mr-2 bg-blue-100 hover:text-white hover:bg-blue-600' %>
-                  <%= link_to '削除', "#", class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
+                  <%= link_to '削除', kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
                 </td>
               </tr>
             <% end %>

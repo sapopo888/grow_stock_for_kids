@@ -1,7 +1,7 @@
 ja:
   activerecord:
     models:
-      kid: 子供
+      kid: 登録者
     attributes:
       kid:
         name: 名前

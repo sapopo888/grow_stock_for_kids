@@ -3,6 +3,8 @@ ja:
     flash_message:
       registered: "%{item}を登録しました"
       not_registered: "%{item}を登録できませんでした"
+      deleted: "%{item}を削除しました。"
+    confirm_delete: "本当に削除しますか？"
     edit: 編集する
   helpers:
     submit:
