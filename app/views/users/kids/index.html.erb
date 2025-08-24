@@ -3,8 +3,11 @@
     <h1 class='text-center text-xl font-semibold mb-12'><%= t('kid.index.title') %></h1>
   
     <table class='table-auto w-full'>
+      <caption class='caption-top pb-1 text-sm text-gray-600 whitespace-nowrap'>
+        * <%= t('kid.index.name_click_to_check_stocks') %>
+      </caption>
       <thead>
-        <tr class='bg-blue-100'>
+        <tr class='bg-sky-100'>
           <th><%= t('kid.index.name') %></th>
           <th><%= t('kid.index.stock_count') %></th>
           <th></th>
@@ -28,6 +31,7 @@
                 <td>
                 </td>
                 <td align="right">
+                  <%= link_to '編集', edit_kid_path(kid), class: 'border rounded px-2 mr-2 bg-blue-300 hover:text-white hover:bg-blue-600' %>
                   <%= link_to '削除', kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
                 </td>
               </tr>
