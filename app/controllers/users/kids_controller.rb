@@ -20,6 +20,31 @@ class Users::KidsController < ApplicationController
     end
   end
 
+  def select_edit_kid
+    @kids = current_user.kid
+  end
+
+  def edit
+    @kid = current_user.kid.find(params[:id])
+  end
+
+  def update
+    @kid = current_user.kid.find(params[:id])
+    if @kid.update(kid_params)
+      flash[:notice] = "登録者情報が更新されました"
+      redirect_to kids_select_edit_kid_path, status: :see_other
+    else
+      flash.now[:alert] = "登録者情報の更新に失敗しました"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @kid = current_user.kid.find(params[:id])
+    @kid.destroy!
+    redirect_to kids_path, notice: t("defaults.flash_message.deleted", item: Kid.model_name.human)
+  end
+
   private
 
   def kid_params

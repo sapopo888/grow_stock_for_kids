@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tops#index"
-  resources :kids, controller: "users/kids", only: %i[index new create]
+  resources :kids, controller: "users/kids", only: %i[index new create edit update destroy]
+  get "/kids/select_edit_kid", to: "users/kids#select_edit_kid"
 end
