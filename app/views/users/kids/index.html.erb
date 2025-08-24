@@ -31,8 +31,8 @@
                 <td>
                 </td>
                 <td align="right">
-                  <%= link_to '編集', edit_kid_path(kid), class: 'border rounded px-2 mr-2 bg-blue-300 hover:text-white hover:bg-blue-600' %>
-                  <%= link_to '削除', kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
+                  <%= link_to t('defaults.edit'), edit_kid_path(kid), class: 'border rounded px-2 mr-2 bg-blue-300 hover:text-white hover:bg-blue-600' %>
+                  <%= link_to t('defaults.delete'), kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'border rounded px-2 mr-2 bg-red-100 hover:text-white hover:bg-red-600' %>
                 </td>
               </tr>
             <% end %>

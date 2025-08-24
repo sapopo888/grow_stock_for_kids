@@ -5,7 +5,8 @@ ja:
       not_registered: "%{item}を登録できませんでした"
       deleted: "%{item}を削除しました。"
     confirm_delete: "本当に削除しますか？"
-    edit: 編集する
+    edit: 編集
+    delete: 削除
   helpers:
     submit:
       create: 登録する
