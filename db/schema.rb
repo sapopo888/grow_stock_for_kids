@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_08_21_123914) do
+ActiveRecord::Schema[7.2].define(version: 2025_08_24_142613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", limit: 15, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", unique: true
+  end
+
+  create_table "clothes_stocks", force: :cascade do |t|
+    t.text "comment"
+    t.string "image"
+    t.bigint "user_id", null: false
+    t.bigint "season_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "size_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_clothes_stocks_on_category_id"
+    t.index ["season_id"], name: "index_clothes_stocks_on_season_id"
+    t.index ["size_id"], name: "index_clothes_stocks_on_size_id"
+    t.index ["user_id"], name: "index_clothes_stocks_on_user_id"
+  end
 
   create_table "kids", force: :cascade do |t|
     t.string "name", limit: 20, null: false
@@ -21,6 +43,20 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_21_123914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_kids_on_user_id"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "name", limit: 30, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_seasons_on_name", unique: true
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.integer "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_sizes_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,5 +73,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_21_123914) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clothes_stocks", "categories"
+  add_foreign_key "clothes_stocks", "seasons"
+  add_foreign_key "clothes_stocks", "sizes"
+  add_foreign_key "clothes_stocks", "users"
   add_foreign_key "kids", "users"
 end
