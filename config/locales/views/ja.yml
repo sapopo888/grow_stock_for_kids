@@ -29,6 +29,8 @@ ja:
   kid:
     index:
       title: 登録者一覧
+      name: 名前
+      stock_count: ストック数
       no_kids: 登録者はいません
     new:
       title: 登録者を追加
