@@ -1,0 +1,15 @@
+<div class='flex m-20 justify-center h-screen'>
+  <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h1 class='text-center text-lg font-semibold'>season一覧</h1>
+  
+    <div class='mt-8 text-center'>
+      <% if @seasons.present? %>
+        <% @seasons.each do |season| %>
+          <li>・<% season.name %></li><br />
+        <% end %>
+      <% else %>
+        まだ季節はありません
+      <% end %>
+    </div>
+  </div>
+</div>
