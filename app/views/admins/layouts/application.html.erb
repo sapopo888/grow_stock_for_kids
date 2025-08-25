@@ -19,6 +19,12 @@
 
   <body class='fixed w-full md:bg-purple-100'>
     <header class='sticky top-0'>
+      <% if admin_signed_in? %>
+        <%= render 'admins/headers/signed_in' %>
+      <% else %>
+        <%= render 'admins/headers/not_signed_in'  %>
+      <% end %>
+
     </header>
 
     <!-- Deviseのflashメッセージ表示-->
