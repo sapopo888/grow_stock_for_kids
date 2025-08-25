@@ -50,4 +50,15 @@ ja:
       logout: ログアウト
       sign_up_for: 会員登録
       login: ログイン
+    user:
+      index:
+        title: ユーザー一覧
+        user_name: ユーザー名
+        created_at: 登録日
+        updated_at: 最終更新日
+        no_user: ユーザーはいません
+  time:
+    formats:
+      default: "%Y年%m月%d日 %H時%M分"
+      short: "%Y/%m/%d %H:%M"
 
