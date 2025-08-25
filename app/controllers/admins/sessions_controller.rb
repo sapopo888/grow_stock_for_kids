@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admins::SessionsController < Devise::SessionsController
-  layout 'admins/layouts/application'
+  layout "admins/layouts/application"
 
   # before_action :configure_sign_in_params, only: [:create]
 
