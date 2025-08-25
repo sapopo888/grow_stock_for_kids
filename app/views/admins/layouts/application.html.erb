@@ -24,8 +24,9 @@
       <% else %>
         <%= render 'admins/headers/not_signed_in'  %>
       <% end %>
-
     </header>
+
+    <%= render 'admins/sidebar' %>
 
     <!-- Deviseのflashメッセージ表示-->
     <% flash.each do |key, message| %>
