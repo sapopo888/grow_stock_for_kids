@@ -1,0 +1,19 @@
+<div class='flex m-20 justify-center h-screen'>
+  <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h1 class='text-center text-lg font-semibold mb-12'>ユーザー一覧</h1>
+      <hr>
+
+      <div class='text-center'>
+        <% if @users.present? %>
+          <% @users.each do |user| %>
+            <%= user.name %>
+            <%= user.created_at %>
+            <br />
+          <% end %>
+        <% else %>
+          <p>ユーザーはいません</p>
+        <% end %>
+      </div>
+    
+  </div>
+</div>
