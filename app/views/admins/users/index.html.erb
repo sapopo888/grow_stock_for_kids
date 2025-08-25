@@ -1,0 +1,33 @@
+<div class='flex m-20 justify-center h-screen'>
+  <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
+    <h1 class='text-center text-lg font-semibold'><%= t('admin.user.index.title') %></h1>
+
+      <table class='w-full table-auto'>
+        <thead>
+          <tr class='bg-pink-100'>
+            <th>ID</th>
+            <th><%= t('admin.user.index.user_name') %></th>
+            <th><%= t('admin.user.index.created_at') %></th>
+            <th><%= t('admin.user.index.updated_at') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @users.present? %>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td class='text-center'><%= l user.created_at, format: :default  %></td>
+                <td class='text-center'><%= l user.updated_at, format: :default  %></td>
+              </tr>
+              <br />
+            <% end %>
+          <% else %>
+            <%= t('admin.user.index.no_user') %>
+          <% end %>
+        </tbody>
+      </table>
+
+    
+  </div>
+</div>

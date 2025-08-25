@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions: "admins/sessions",
+    registrations: "admins/registrations"
+  }
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations"
@@ -16,4 +20,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "tops#index"
   resources :kids, controller: "users/kids", only: %i[index new create edit update destroy]
+  namespace :admins do
+    root "dashboards#index"
+    resource :dashboard, only: %i[index]
+    resources :users, only: %i[index edit update destroy]
+  end
 end
