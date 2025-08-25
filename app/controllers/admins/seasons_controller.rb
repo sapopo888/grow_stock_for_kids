@@ -13,8 +13,10 @@ class Admins::SeasonsController < Admins::BaseController
     @season = Season.new(season_params)
     if @season.save
       flash[:notice] = '季節を作成しました'
+      redirect_to admins_seasons_path, status: :see_other
     else
       flash.now[:alert] = '季節の作成に失敗しました'
+      render :new, status: :unprocessable_entity
     end
   end
 
