@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resource :dashboard, only: %i[index]
     resources :users, only: %i[index edit update destroy]
+    resources :seasons, only: %i[index new create edit update destroy]
   end
 end
