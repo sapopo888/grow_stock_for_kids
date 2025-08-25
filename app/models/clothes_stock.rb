@@ -5,5 +5,4 @@ class ClothesStock < ApplicationRecord
   belongs_to :size
 
   validates :comment, length: { maximum: 50 }
-  validates :image
 end
