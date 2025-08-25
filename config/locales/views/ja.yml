@@ -42,4 +42,12 @@ ja:
       title: 登録者情報の編集
       name: 名前
       gender: 性別
+  admin:
+    header:
+      my_page: マイページ
+      user_all: ユーザー一覧
+      account_detail: アカウント情報
+      logout: ログアウト
+      sign_up_for: 会員登録
+      login: ログイン
 
