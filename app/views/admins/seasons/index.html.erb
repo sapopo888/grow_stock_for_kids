@@ -5,7 +5,7 @@
     <div class='mt-8 text-center'>
       <% if @seasons.present? %>
         <% @seasons.each do |season| %>
-          <li>・<% season.name %></li><br />
+          <li><%= season.name %></li><br />
         <% end %>
       <% else %>
         まだ季節はありません
