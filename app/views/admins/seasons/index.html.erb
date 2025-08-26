@@ -5,7 +5,10 @@
     <div class='mt-8 text-center'>
       <% if @seasons.present? %>
         <% @seasons.each do |season| %>
-          <li><%= season.name %></li><br />
+          <div class='flex space-x-2 justify-center mb-2'>
+            <p class='block px-8'><%= season.name %></p><br />
+            <p><%= link_to '削除', admins_season_path(season), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'border px-2 py-0.5 rounded bg-red-500 text-white hover:bg-red-700' %></li>
+          </div>
         <% end %>
       <% else %>
         まだ季節はありません
