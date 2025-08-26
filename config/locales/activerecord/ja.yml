@@ -6,6 +6,8 @@ ja:
       kid:
         name: 名前
         gender: 性別
+      season:
+        name: 季節
     enums:
       kid:
         gender:
