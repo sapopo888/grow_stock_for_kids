@@ -12,10 +12,10 @@ class Admins::SeasonsController < Admins::BaseController
   def create
     @season = Season.new(season_params)
     if @season.save
-      flash[:notice] = '季節を作成しました'
+      flash[:notice] = "季節を作成しました"
       redirect_to admins_seasons_path, status: :see_other
     else
-      flash.now[:alert] = '季節の作成に失敗しました'
+      flash.now[:alert] = "季節の作成に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,10 +24,10 @@ class Admins::SeasonsController < Admins::BaseController
 
   def update
     if @season.update(season_params)
-      flash[:notice] = '季節を更新しました'
+      flash[:notice] = "季節を更新しました"
       redirect_to admins_seasons_path, status: :see_other
     else
-      flash.now[:alert] = '季節の更新に失敗しました'
+      flash.now[:alert] = "季節の更新に失敗しました"
       render :edit, status: :unprocessable_entity
     end
   end
