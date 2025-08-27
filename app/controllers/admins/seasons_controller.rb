@@ -2,7 +2,7 @@ class Admins::SeasonsController < Admins::BaseController
   before_action :set_season, only: %i[edit update destroy]
 
   def index
-    @seasons = Season.all
+    @seasons = Season.all.order(created_at: :asc)
   end
 
   def new
