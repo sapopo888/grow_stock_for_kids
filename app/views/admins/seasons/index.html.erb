@@ -6,7 +6,9 @@
       <% if @seasons.present? %>
         <% @seasons.each do |season| %>
           <div class='flex space-x-2 justify-center mb-2'>
+            <p><%= season.id %></p>
             <p class='block px-8'><%= season.name %></p><br />
+            <p><%= link_to '編集', edit_admins_season_path(season), class: 'border px-2 py-0.5 rounded bg-green-500 text-white hover:bg-green-700' %></p>
             <p><%= link_to '削除', admins_season_path(season), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'border px-2 py-0.5 rounded bg-red-500 text-white hover:bg-red-700' %></li>
           </div>
         <% end %>
