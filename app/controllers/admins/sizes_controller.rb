@@ -1,4 +1,4 @@
-class Users::SizesController < Admins::BaseController
+class Admins::SizesController < Admins::BaseController
   before_action :set_size, only: %i[edit update destroy]
 
   def index
@@ -22,7 +22,7 @@ class Users::SizesController < Admins::BaseController
     if @size.update
       redirect_to admins_sizes_path, notice: 'サイズを更新しました', status: :see_other
     else
-      render :edit, alert: 'サイズの更新にしっぱっしました', status: :unprocessable_entity
+      render :edit, alert: 'サイズの更新に失敗しました', status: :unprocessable_entity
     end
   end
 
