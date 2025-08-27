@@ -1,20 +1,31 @@
-<div class='flex m-20 justify-center h-screen'>
-  <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
-    <h1 class='text-center text-lg font-semibold border-b pb-2'>season一覧</h1>
-  
-    <div class='mt-8 text-center'>
-      <% if @seasons.present? %>
-        <% @seasons.each do |season| %>
-          <div class='flex space-x-2 justify-center mb-2'>
-            <p><%= season.id %></p>
-            <p class='block px-8'><%= season.name %></p><br />
-            <p><%= link_to '編集', edit_admins_season_path(season), class: 'border px-2 py-0.5 rounded bg-green-500 text-white hover:bg-green-700' %></p>
-            <p><%= link_to '削除', admins_season_path(season), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'border px-2 py-0.5 rounded bg-red-500 text-white hover:bg-red-700' %></li>
-          </div>
-        <% end %>
-      <% else %>
-        まだ季節はありません
-      <% end %>
-    </div>
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="w-[90%] md:w-[60%] rounded-lg shadow-lg bg-white text-gray-800 p-6">
+    <h1 class="text-center text-xl font-bold mb-6">Season一覧</h1>
+
+    <% if @seasons.present? %>
+      <table class="table-auto w-full border-collapse border border-gray-300 text-center">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="border border-gray-300 px-4 py-2">ID</th>
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @seasons.each do |season| %>
+            <tr class="hover:bg-gray-100">
+              <td class="border border-gray-300 px-4 py-2"><%= season.id %></td>
+              <td class="border border-gray-300 px-4 py-2"><%= season.name %></td>
+              <td class="border border-gray-300 px-4 py-2 space-x-2">
+                <%= link_to '編集', edit_admins_season_path(season), class: 'px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600' %>
+                <%= link_to '削除', admins_season_path(season), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p class="text-center text-gray-500 mt-6">まだ季節はありません</p>
+    <% end %>
   </div>
 </div>
