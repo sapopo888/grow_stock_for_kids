@@ -2,7 +2,7 @@ class Admins::SizesController < Admins::BaseController
   before_action :set_size, only: %i[edit update destroy]
 
   def index
-    @sizes = Size.all.order(created_at: :desc)
+    @sizes = Size.all.order(created_at: :asc)
   end
 
   def new
