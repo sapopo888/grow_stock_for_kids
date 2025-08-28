@@ -1,23 +1,29 @@
 document.addEventListener("turbo:load", () => {
   let hideTimeout; // タイマーを管理する変数
 
-  const dropdownContainer = document.querySelector(".dropdown-container");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
+  // すべての dropdown-container を取得
+  const dropdownContainers = document.querySelectorAll(".dropdown-container");
 
-  dropdownContainer.addEventListener("mouseenter", () => {
-    // 非表示のタイマーがある場合はキャンセル
-    if (hideTimeout) {
-      clearTimeout(hideTimeout);
-      hideTimeout = null;
-    }
-    // メニューを表示
-    dropdownMenu.style.display = "block";
-  });
+  dropdownContainers.forEach(container => {
+    const dropdownMenu = container.querySelector(".dropdown-menu");
 
-  dropdownContainer.addEventListener("mouseleave", () => {
-    // 少し遅延してからメニューを非表示にする
-    hideTimeout = setTimeout(() => {
-      dropdownMenu.style.display = "none";
-    }, 200);
+    container.addEventListener("mouseenter", () => {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+       // 他のメニューを閉じる
+      dropdownContainers.forEach(c => {
+        const m = c.querySelector(".dropdown-menu");
+        if (m !== dropdownMenu) m.style.display = "none";
+      });
+      dropdownMenu.style.display = "block";
+    });
+
+    container.addEventListener("mouseleave", () => {
+      hideTimeout = setTimeout(() => {
+        dropdownMenu.style.display = "none";
+      }, 200);
+    });
   });
 });
