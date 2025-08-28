@@ -14,7 +14,7 @@ class Admins::CategoriesController < Admins::BaseController
     if @category.save
       redirect_to admins_categories_path, notice: "Categoryを作成しました", status: :see_other
     else
-      render :new, alert: 'Categoryの作成に失敗しました', status: :unprocessable_entity
+      render :new, alert: "Categoryの作成に失敗しました", status: :unprocessable_entity
     end
   end
 
@@ -22,9 +22,9 @@ class Admins::CategoriesController < Admins::BaseController
 
   def update
     if @category.update(category_params)
-      redirect_to admins_categories_path, notice: 'Categoryを編集しました', status: :see_other
+      redirect_to admins_categories_path, notice: "Categoryを編集しました", status: :see_other
     else
-      render :edit, alert: 'Categoryの編集に失敗しました', status: :unprocessable_entity
+      render :edit, alert: "Categoryの編集に失敗しました", status: :unprocessable_entity
     end
   end
 
