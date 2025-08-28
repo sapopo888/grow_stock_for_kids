@@ -31,7 +31,7 @@
     <!-- flashメッセージ表示(Deviseのファイル使用) -->
     <div class='w-full ms-auto'> <!-- ms-autoで要素右に寄せる -->
       <% flash.each do |key, message| %>
-        <div class="text-center p-4 rounded-lg <%= key == "alert" ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700" %>">
+        <div class="text-center md:text-left p-4 rounded-lg <%= key == "alert" ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700" %>">
           <%= message %>
         </div>
       <% end %>
