@@ -1,32 +1,33 @@
-<div class='fixed left-0 top-20 w-[20%] h-[80%] bg-purple-200 rounded-lg'>
+<div class='fixed left-0 top-20 w-40  h-[80%] bg-purple-200 rounded-lg'>
   <a href='#' class="flex items-center pb-4 border-b border-gray-800">
     <img src="https://placehold.co/40x40" alt="" class="ml-1 mt-2 w-10 h-10 rounded object-cover">
     <span class="font-bold text-gray-700">Grow Stock</span>
   </a>
 
-  <div class='dropdown-container relative inline-block ml-4'>
-    <button class='inline-flex items-center justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-white hover:text-gray-700'>
-      Season
-      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
-        <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-      </svg>
-    </button>
-    <ul class="dropdown-menu absolute left-0 w-56 origin-top-left rounded-md bg-purple-600 shadow-lg ring-1 ring-white/10 z-50" style= 'display: none;'>
-      <li><%= link_to 'Season一覧', admins_seasons_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
-      <li><%= link_to 'Season作成', new_admins_season_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
-    </ul>
-  </div>
-
-  <div class='dropdown-container relative inline-block ml-4'>
-    <button class='inline-flex items-center justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-white hover:text-gray-700'>
-      Size
-      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
-        <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-      </svg>
-    </button>
-    <ul class="dropdown-menu absolute left-0 w-56 origin-top-left rounded-md bg-purple-600 shadow-lg ring-1 ring-white/10 z-50" style= 'display: none;'>
-      <li><%= link_to 'Size一覧', admins_sizes_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
-      <li><%= link_to 'Size作成', new_admins_size_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
-    </ul>
+  <div class='flex flex-col items-center'>
+    <div class='dropdown-container relative inline-block ml-4'>
+      <button class='inline-flex items-center justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-white hover:text-gray-700'>
+        Season
+        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
+          <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+        </svg>
+      </button>
+      <ul class="dropdown-menu absolute left-0 w-56 origin-top-left rounded-md bg-purple-600 shadow-lg ring-1 ring-white/10 z-50" style= 'display: none;'>
+        <li><%= link_to 'Season一覧', admins_seasons_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
+        <li><%= link_to 'Season作成', new_admins_season_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
+      </ul>
+    </div>
+    <div class='dropdown-container relative inline-block ml-4'>
+      <button class='inline-flex items-center justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-white hover:text-gray-700'>
+        Size
+        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-gray-400">
+          <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+        </svg>
+      </button>
+      <ul class="dropdown-menu absolute left-0 w-56 origin-top-left rounded-md bg-purple-600 shadow-lg ring-1 ring-white/10 z-50" style= 'display: none;'>
+        <li><%= link_to 'Size一覧', admins_sizes_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
+        <li><%= link_to 'Size作成', new_admins_size_path, class: 'block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white' %></li>
+      </ul>
+    </div>
   </div>
 </div>
