@@ -1,10 +1,10 @@
 <div class='flex justify-center items-center min-h-screen bg-gray-100'>
-  <div class='w-[55%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
+  <div class='w-[80%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
     <h1 class='text-center text-xl font-semibold mb-6'><%= t('kid.index.title') %></h1>
   
     <% if @kids.present? %>
       <table class='table-auto w-full border-collapse border border-gray-300 text-center'>
-        <caption class='caption-top pb-1 text-sm text-gray-600 whitespace-nowrap'>
+        <caption class='caption-top pb-1 text-sm text-gray-600'>
           * <%= t('kid.index.name_click_to_check_stocks') %>
         </caption>
         <thead class="bg-gray-200">
@@ -14,29 +14,32 @@
             <th class='border border-gray-300 px-4 py-2'>Action</th>
           </tr>
         </thead>
-      <tbody>
-        <% @kids.each do |kid| %>
-          <tr class='hover:bg-gray-100'>
-            <td class='border border-gray-300 px-4 py-2'>
-              <% if kid.gender == "male" %>
-                <span class='text-blue-500'><%= link_to kid.name, edit_kid_path(kid) %></span>
-              <% elsif kid.gender == "female" %>
-                <span class='text-pink-500'><%= link_to kid.name, edit_kid_path(kid) %></span>
-              <% else %>
-                <span class='text-gray-500'><%= link_to kid.name, edit_kid_path(kid) %></span>
-              <% end %>
-            </td>
-              <!-- ここにストック入れる -->
-            <td class='border border-gray-300 px-4 py-2'>
-            </td>
-            <td class='border border-gray-300 px-4 py-2 space-x-2'>
-              <%= link_to t('defaults.edit'), edit_kid_path(kid), class: 'px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600' %>
-              <%= link_to t('defaults.delete'), kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+        <tbody>
+          <% @kids.each do |kid| %>
+            <tr class='hover:bg-gray-100'>
+              <td class='border border-gray-300 px-4 py-2 whitespace-nowrap'>
+                <% if kid.gender == "male" %>
+                  <span class='text-blue-500'><%= link_to kid.name, edit_users_kid_path(kid) %></span>
+                <% elsif kid.gender == "female" %>
+                  <span class='text-pink-500'><%= link_to kid.name, edit_users_kid_path(kid) %></span>
+                <% else %>
+                  <span class='text-gray-500'><%= link_to kid.name, edit_users_kid_path(kid) %></span>
+                <% end %>
+              </td>
+                <!-- ここにストック入れる -->
+              <td class='border border-gray-300 px-4 py-2 whitespace-nowrap'>
+                ここがストック一覧
+              </td>
+              <td class='border border-gray-300 px-4 py-2'>
+                <div class='flex justify-center space-x-2 whitespace-nowrap'>
+                  <%= link_to t('defaults.edit'), edit_users_kid_path(kid), class: 'px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600' %>
+                  <%= link_to t('defaults.delete'), users_kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600' %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% else %>
       <p class="text-center text-gray-500 mt-6"><%= t('kid.index.no_kids') %></p>
     <% end %>
