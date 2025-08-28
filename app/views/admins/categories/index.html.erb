@@ -1,0 +1,27 @@
+<div class='flex justify-center items-center min-h-screen bg-gray-100'>
+  <div class='w-[55%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
+    <h1 class='text-center text-xl font-bold mb-6'>Category一覧</h1>
+  
+    <% if @categories.present? %>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.id %></td>
+              <td><%= category.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>Categoryはまだありません</p>
+    <% end %>
+  </div>
+</div>
