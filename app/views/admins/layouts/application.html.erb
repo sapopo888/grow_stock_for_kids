@@ -26,7 +26,9 @@
       <% end %>
     </header>
 
-    <%= render 'admins/sidebar' %>
+    <% if admin_signed_in? %>
+      <%= render 'admins/sidebar' %>
+    <% end %>
 
     <!-- flashメッセージ表示(Deviseのファイル使用) -->
     <div class='w-full ms-auto'> <!-- ms-autoで要素右に寄せる -->
