@@ -1,5 +1,5 @@
 class Users::KidsController < ApplicationController
-   before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @kids = current_user.kid.order(created_at: :asc)
