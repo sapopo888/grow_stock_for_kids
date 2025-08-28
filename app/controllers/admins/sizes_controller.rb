@@ -18,7 +18,9 @@ class Admins::SizesController < Admins::BaseController
     end
   end
 
-  def edit
+  def edit; end
+
+  def update
     if @size.update
       redirect_to admins_sizes_path, notice: 'サイズを更新しました', status: :see_other
     else
