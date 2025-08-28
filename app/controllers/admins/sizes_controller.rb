@@ -21,7 +21,7 @@ class Admins::SizesController < Admins::BaseController
   def edit; end
 
   def update
-    if @size.update
+    if @size.update(size_params)
       redirect_to admins_sizes_path, notice: 'サイズを更新しました', status: :see_other
     else
       render :edit, alert: 'サイズの更新に失敗しました', status: :unprocessable_entity
