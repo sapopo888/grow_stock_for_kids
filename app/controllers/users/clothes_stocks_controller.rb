@@ -7,6 +7,7 @@ class Users::ClothesStocksController < ApplicationController
 
   def new
     @clothes_stock = ClothesStock.new
+    @seasons = Season.all
   end
 
   def create
