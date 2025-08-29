@@ -3,7 +3,7 @@
     <h2 class='text-center text-xl font-semibold mb-12'>子供の登録</h2>
   
     <div class='w-full flex-wrap whitespace-nowrap'>
-      <%= form_with model: @kid do |f| %>
+      <%= form_with model: @kid, url:users_kids_path do |f| %>
         <%= render "users/shared/error_messages", resource: @kid %>
 
         <div class='mb-2'>

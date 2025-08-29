@@ -3,11 +3,11 @@
     <h2 class='text-center text-xl font-semibold mb-12'><%= t('kid.edit.title') %></h2>
   
     <div class='w-full flex-wrap whitespace-nowrap'>
-      <%= form_with model: @kid do |f| %>
+      <%= form_with model: @kid, url: users_kid_path do |f| %>
         <%= render "users/shared/error_messages", resource: @kid %>
 
         <div class='mb-2'>
-          <%= f.label :name %> :<br />
+          <%= f.label :name, class: 'block text-sm font-medium text-gray-700' %>
           <%= f.text_field :name, class: 'w-full ring rounded ring-gray-300 mb-2 p-1' %>
         </div>
         
