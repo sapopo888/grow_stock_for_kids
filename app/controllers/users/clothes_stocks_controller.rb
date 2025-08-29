@@ -8,6 +8,8 @@ class Users::ClothesStocksController < ApplicationController
   def new
     @clothes_stock = ClothesStock.new
     @seasons = Season.all
+    @categories = Category.all
+    @sizes = Size.all
   end
 
   def create
@@ -22,6 +24,11 @@ class Users::ClothesStocksController < ApplicationController
   private
 
   def clothes_stock_params
-    params.require(:clothes_stock).permit(:comment)
+    params.require(:clothes_stock).permit(
+      :comment,
+      :season_id,
+      :category_id,
+      :size_id
+      ).merge(user_id: current_user.id) # ユーザーに紐付け
   end
 end
