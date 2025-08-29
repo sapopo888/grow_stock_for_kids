@@ -15,9 +15,9 @@ class Users::ClothesStocksController < ApplicationController
   def create
     @clothes_stock = ClothesStock.new(clothes_stock_params)
     if @clothes_stock.save
-      redirect_to users_clothes_stocks_path, notice: 'ストックを作成しました', status: :see_other
-    else 
-      render :new, alert: 'ストックの作成に失敗しました', status: :unprocessable_entity
+      redirect_to users_clothes_stocks_path, notice: "ストックを作成しました", status: :see_other
+    else
+      render :new, alert: "ストックの作成に失敗しました", status: :unprocessable_entity
     end
   end
 

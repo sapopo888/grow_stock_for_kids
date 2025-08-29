@@ -23,7 +23,7 @@ class Users::KidsController < ApplicationController
   def edit
     @kid = current_user.kid.find(params[:id])
   end
-  
+
   def update
     @kid = current_user.kid.find(params[:id])
     if @kid.update(kid_params)
