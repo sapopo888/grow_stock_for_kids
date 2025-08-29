@@ -28,7 +28,9 @@ class Users::ClothesStocksController < ApplicationController
       :comment,
       :season_id,
       :category_id,
-      :size_id
+      :size_id,
+      :image,
+      :image_cache
       ).merge(user_id: current_user.id) # ユーザーに紐付け
   end
 end
