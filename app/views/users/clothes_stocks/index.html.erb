@@ -1,0 +1,33 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="w-[90%] md:w-[50%] rounded-lg shadow-lg bg-white text-gray-800 p-6">
+    <h1 class="text-center text-xl font-bold mb-6">clothes_stock一覧</h1>
+  
+    <% if @clothes_stocks.present? %>
+    <table class="table-auto w-full border-collapse border border-gray-300 text-center">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border border-gray-300 px-4 py-2">ID</th>
+          <th class="border border-gray-300 px-4 py-2">Season</th>
+          <th class="border border-gray-300 px-4 py-2">Category</th>
+          <th class="border border-gray-300 px-4 py-2">Size</th>
+          <th class="border border-gray-300 px-4 py-2">Comment</th>
+        </tr>
+      </thead>
+      <% @clothes_stocks.each do |clothes_stock| %>
+        <tbody>
+          <tr class="hover:bg-gray-100">
+            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.id %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.season.name %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.category.name %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.size.name %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.comment %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+
+    <% else %>
+      <p class="text-center text-gray-500 mt-6">まだClothes Stockかありません</p>
+    <% end %>
+  </div>
+</div>
