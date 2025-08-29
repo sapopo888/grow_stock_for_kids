@@ -7,7 +7,7 @@
 
         <div class='mb-4'>
           <%= f.label :season, class: 'block text-sm font-medium text-gray-700'  %>
-          <%= f.select :season_id, options_from_collection_for_select(@seasons, :id, :name), { include_blank: "選択してください" }, class: 'w-full border border-gray-300 rounded-md mt-1' %>
+          <%= f.select :season_id, @seasons.pluck(:name, :id), { include_blank: "選択してください" }, class: 'w-full border border-gray-300 rounded-md mt-1' %>
         </div>
 
         <div class='mb-4'>
