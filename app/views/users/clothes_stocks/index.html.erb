@@ -11,6 +11,7 @@
           <th class="border border-gray-300 px-4 py-2">Category</th>
           <th class="border border-gray-300 px-4 py-2">Size</th>
           <th class="border border-gray-300 px-4 py-2">Comment</th>
+          <th class="border border-gray-300 px-4 py-2">Image</th>
         </tr>
       </thead>
       <% @clothes_stocks.each do |clothes_stock| %>
@@ -21,6 +22,7 @@
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.category.name %></td>
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.size.name %></td>
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.comment %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= image_tag clothes_stock.image.url, width: "40", height: "40" %></td>
           </tr>
         </tbody>
       <% end %>

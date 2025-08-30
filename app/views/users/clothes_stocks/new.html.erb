@@ -24,7 +24,13 @@
           <%= f.label :comment, class: 'block text-sm font-medium text-gray-700' %>
           <%= f.text_area :comment, class: 'w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border^blue-500 p-2 mt-1' %>
         </div>
-      
+
+        <div class='mb-4'>
+          <%= f.label :image, class: 'block text-sm font-medium text-gray-700' %>
+          <%= f.file_field :image, class: '', accept: 'image/*' %>
+          <%= f.hidden_field :image_cache%>
+        </div>
+
       <div class="text-center mt-8">
         <%= f.submit '作成する', class: 'w-full mt-8 rounded-md bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 font-semibold shadow' %>
       </div>
