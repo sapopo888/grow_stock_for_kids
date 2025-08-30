@@ -27,10 +27,10 @@ class Users::KidsController < ApplicationController
   def update
     @kid = current_user.kid.find(params[:id])
     if @kid.update(kid_params)
-      flash[:notice] = "登録者情報が更新されました"
+      flash[:notice] = t("defaults.flash_message.updated", item: Kid.model_name.human)
       redirect_to users_kids_path, status: :see_other
     else
-      flash.now[:alert] = "登録者情報の更新に失敗しました"
+      flash.now[:alert] = t("defaults.flash_message.not_updated", item: Kid.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
