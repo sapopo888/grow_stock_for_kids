@@ -37,16 +37,16 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_24_221639) do
   create_table "clothes_stocks", force: :cascade do |t|
     t.text "comment"
     t.string "image"
-    t.bigint "user_id", null: false
+    t.bigint "kid_id", null: false
     t.bigint "season_id", null: false
     t.bigint "category_id", null: false
     t.bigint "size_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_clothes_stocks_on_category_id"
+    t.index ["kid_id"], name: "index_clothes_stocks_on_kid_id"
     t.index ["season_id"], name: "index_clothes_stocks_on_season_id"
     t.index ["size_id"], name: "index_clothes_stocks_on_size_id"
-    t.index ["user_id"], name: "index_clothes_stocks_on_user_id"
   end
 
   create_table "kids", force: :cascade do |t|
@@ -87,8 +87,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_24_221639) do
   end
 
   add_foreign_key "clothes_stocks", "categories"
+  add_foreign_key "clothes_stocks", "kids"
   add_foreign_key "clothes_stocks", "seasons"
   add_foreign_key "clothes_stocks", "sizes"
-  add_foreign_key "clothes_stocks", "users"
   add_foreign_key "kids", "users"
 end
