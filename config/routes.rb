@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   root "tops#index"
   namespace :users do
     resources :kids, only: %i[index new create edit update destroy]
-    resources :clothes_stocks, only: %i[index new create edit update destroy]
+    resources :clothes_stocks, only: %i[index new create show edit update destroy]
   end
   namespace :admins do
     root "dashboards#index"
