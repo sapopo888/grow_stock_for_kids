@@ -1,5 +1,5 @@
 class ClothesStock < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :kid
   belongs_to :season
   belongs_to :category
   belongs_to :size
