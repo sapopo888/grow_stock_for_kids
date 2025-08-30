@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "tops#index"
-  resources :kids, only: %i[index new create edit update destroy] do
-    resources :clothes_stocks, only: %i[index new create show edit update destroy]
+  namespace :users do
+    resources :kids, only: %i[index new create edit update destroy] do
+      resources :clothes_stocks, only: %i[index new create show edit update destroy], shallow: true
+    end
   end
 
   namespace :admins do
