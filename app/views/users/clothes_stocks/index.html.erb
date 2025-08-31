@@ -7,6 +7,7 @@
       <thead class="bg-gray-200">
         <tr>
           <th class="border border-gray-300 px-4 py-2">ID</th>
+          <th class="border border-gray-300 px-4 py-2">kid</th>
           <th class="border border-gray-300 px-4 py-2">Season</th>
           <th class="border border-gray-300 px-4 py-2">Category</th>
           <th class="border border-gray-300 px-4 py-2">Size</th>
@@ -17,7 +18,8 @@
       <% @clothes_stocks.each do |clothes_stock| %>
         <tbody>
           <tr class="hover:bg-gray-100">
-            <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.id %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= link_to clothes_stock.id, users_clothes_stock_path(clothes_stock) %></td>
+            <td class="border border-gray-300 px-4 py-2"><%= link_to clothes_stock.kid.name %></td>
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.season.name %></td>
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.category.name %></td>
             <td class="border border-gray-300 px-4 py-2"><%= clothes_stock.size.name %></td>
