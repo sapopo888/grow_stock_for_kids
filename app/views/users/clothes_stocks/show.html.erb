@@ -5,23 +5,33 @@
       <div class='flex'>
         <div class='flex flex-col text-center'>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>季節</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.season') %>
+            </label>
             <%= @clothes_stock.season.name %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>カテゴリー</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.category') %>
+            </label>
             <%= @clothes_stock.category.name %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>コメント</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.comment') %>
+            </label>
             <%= @clothes_stock.comment %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>登録日</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.created_at') %>
+            </label>
             <%= l @clothes_stock.created_at, format: :default %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>更新日</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.updated_at') %>
+            </label>
             <%= l @clothes_stock.updated_at, format: :default %>
           </span>
         </div>
@@ -38,9 +48,9 @@
 
         <!-- 右端にボタン -->
         <div class="flex space-x-2">
-          <%= link_to '編集', edit_users_clothes_stock_path(@clothes_stock),
+          <%= link_to t('defaults.edit'), edit_users_clothes_stock_path(@clothes_stock),
                       class: 'rounded-md bg-green-500 hover:bg-green-600 text-white px-4 py-1 font-semibold shadow' %>
-          <%= link_to '削除', users_clothes_stock_path(@clothes_stock),
+          <%= link_to t('defaults.delete'), users_clothes_stock_path(@clothes_stock),
                       data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' },
                       class: 'rounded-md bg-red-500 hover:bg-red-600 text-white px-4 py-1 font-semibold shadow' %>
         </div>

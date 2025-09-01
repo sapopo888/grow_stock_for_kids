@@ -50,6 +50,13 @@ ja:
   clothes_stock:
     index:
       title: "#{items}のストック一覧"
+    show:
+      season: 季節
+      category: カテゴリー
+      size: サイズ
+      comment: コメント
+      created_at: 登録日
+      updated_at: 更新日
   admin:
     header:
       my_page: マイページ
