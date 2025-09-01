@@ -37,8 +37,9 @@ ja:
       name: 名前
       stock_count: ストック数
       stocks_all: ストック一覧
+      action: アクション
       no_kids: 登録者はいません
-      name_click_to_check_stocks: 在庫の詳細を確認するには、登録者名をクリックしてください。
+      name_click_to_edit_kid: 登録者情報を変更するには、名前をクリックしてください。
     new:
       title: 登録者を追加
     select_edit_kid:

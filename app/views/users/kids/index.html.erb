@@ -8,13 +8,13 @@
     <% if @kids.present? %>
       <table class='table-auto w-full border-collapse border border-gray-300 text-center'>
         <caption class='caption-top pb-1 text-sm text-gray-600'>
-          * <%= t('kid.index.name_click_to_check_stocks') %>
+          * <%= t('kid.index.name_click_to_edit_kid') %>
         </caption>
         <thead class="bg-gray-200">
           <tr>
             <th class='border border-gray-300 px-4 py-2'><%= t('kid.index.name') %></th>
             <th class='border border-gray-300 px-4 py-2'><%= t('kid.index.stock_count') %></th>
-            <th class='border border-gray-300 px-4 py-2'>Action</th>
+            <th class='border border-gray-300 px-4 py-2'><%= t('kid.index.action') %></th>
           </tr>
         </thead>
         <tbody>
