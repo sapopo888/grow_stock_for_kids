@@ -20,7 +20,7 @@
             <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
               <%= t('clothes_stock.show.comment') %>
             </label>
-            <%= @clothes_stock.comment %>
+            <%= simple_format(@clothes_stock.comment) %>
           </span>
           <span class='flex flex-col mb-2'>
             <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
