@@ -1,5 +1,5 @@
 <div class='flex justify-center items-center min-h-screen bg-gray-100'>
-  <div class='w-[80%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
+  <div class='w-[80%] md:w-[50%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
     <h1 class='text-center text-xl font-semibold mb-6'><%= t('kid.index.title') %></h1>
   
     <% if @kids.present? %>
@@ -26,9 +26,13 @@
                   <span class='text-gray-500'><%= link_to kid.name, edit_users_kid_path(kid) %></span>
                 <% end %>
               </td>
-                <!-- ここにストック入れる -->
               <td class='border border-gray-300 px-4 py-2 whitespace-nowrap'>
-                ここがストック一覧
+                <div class='flex items-center'>
+                  <!-- ストック数を中央よせ -->
+                  <span class='flex-1 text-center'><%= "#{kid.clothes_stocks.count}個" %></span>
+                  <!-- ボタンは右端 -->
+                  <%= link_to "+", new_users_kid_clothes_stock_path(kid), class: 'px-2 py-1 rounded bg-orange-500 text-white hover:bg-orange-600' %>
+                </div>
               </td>
               <td class='border border-gray-300 px-4 py-2'>
                 <div class='flex justify-center space-x-2 whitespace-nowrap'>
