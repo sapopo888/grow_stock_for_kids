@@ -1,0 +1,83 @@
+<div class="flex justify-center items-start min-h-screen bg-gray-100 py-12 px-4">
+  <div class="w-full max-w-lg rounded-xl shadow-lg bg-white p-8 text-gray-800">
+    <h2 class="text-center text-xl font-bold mb-8">
+      <%= t('clothes_stock.edit.title') %>
+    </h2>
+
+    <%= form_with model: [@kid, @clothes_stock], url: users_clothes_stock_path, method: :patch do |f| %>
+      <%= render "users/shared/error_messages", resource: @clothes_stock %>
+      <div class="mb-6">
+        <%= f.label :name, class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= @kid.name %>
+      </div>
+
+      <!-- Season -->
+      <div class="mb-6">
+        <%= f.label :season,  class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.select :season_id, @seasons.pluck(:name, :id), { include_blank: "選択してください" }, class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
+      </div>
+
+      <!-- Category -->
+      <div class="mb-6">
+        <%= f.label :category, class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.select :category_id, @categories.pluck(:name, :id), { include_blank: "選択してください" }, class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
+      </div>
+
+      <!-- Size -->
+      <div class="mb-6">
+        <%= f.label :size, class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.select :size_id, @sizes.pluck(:name, :id), { include_blank: "選択してください" }, class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
+      </div>
+
+      <!-- Comment -->
+      <div class="mb-6">
+        <%= f.label :comment, class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.text_area :comment, rows: 3, class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
+      </div>
+
+      <!-- Image -->
+      <div class="mb-8">
+        <%= f.label :image, class: "block text-sm font-medium text-gray-700 mb-2" %>
+
+        <% if @clothes_stock.image.present? %>
+          <div class="mb-4 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50">
+            <div class="text-center">
+              <p class="text-sm text-gray-600 mb-3"><%= t('clothes_stock.edit.present_image') %></p>
+              <%= image_tag @clothes_stock.image.url, class: "mx-auto w-48 h-48 object-cover rounded-lg shadow-md" %>
+            </div>
+            <div class="mt-4 flex items-center justify-center">
+              <%= f.check_box :remove_image, class: "mr-2 rounded" %>
+              <%= f.label :remove_image, t('clothes_stock.edit.delete_this_picture'), class: "text-sm text-red-600 cursor-pointer" %>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mb-2"><%= t('clothes_stock.edit.message2') %></p>
+        <% else %>
+          <p class="text-sm text-gray-600 mb-2"><%= t('clothes_stock.edit.message1') %></p>
+        <% end %>
+
+        <div class="mt-2">
+          <%= f.file_field :image, 
+                class: "block w-full text-sm text-gray-500 
+                        file:mr-4 file:py-2 file:px-4 
+                        file:rounded-md file:border-0 
+                        file:text-sm file:font-semibold 
+                        file:bg-blue-50 file:text-blue-700 
+                        hover:file:bg-blue-100 
+                        border border-gray-300 rounded-md 
+                        focus:ring-blue-500 focus:border-blue-500",
+                accept: "image/*" %>
+        </div>
+
+        <%= f.hidden_field :image_cache %>
+        <p class="mt-2 text-xs text-gray-500">
+          <%= t('clothes_stock.edit.notice') %>
+        </p>
+      </div>
+
+      <!-- Submit -->
+      <div class="mt-8">
+        <%= f.submit "更新する", class: "w-full rounded-md bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 font-semibold shadow-lg transition" %>
+      </div>
+    <% end %>
+  </div>
+</div>

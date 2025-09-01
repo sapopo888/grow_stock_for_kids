@@ -50,6 +50,24 @@ ja:
   clothes_stock:
     index:
       title: "#{items}のストック一覧"
+    new:
+      title: ストック追加
+      please_select: 選択してください
+      notice: "対応形式: JPG, PNG, GIF（最大サイズ: 5MB）"
+    show:
+      season: 季節
+      category: カテゴリー
+      size: サイズ
+      comment: コメント
+      created_at: 登録日
+      updated_at: 更新日
+    edit:
+      title: ストック編集
+      present_image: 現在登録されている画像
+      message1: 画像をアップロードしてください：
+      message2: 画像を変更する場合は、新しいファイルを選択してください：
+      delete_this_picture: この画像を削除する
+      notice: "対応形式: JPG, PNG, GIF（最大サイズ: 5MB）"
   admin:
     header:
       my_page: マイページ

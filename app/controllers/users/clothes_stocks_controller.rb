@@ -30,7 +30,12 @@ module Users
 
     def show; end
 
-    def edit; end
+    def edit
+      @kid = @clothes_stock.kid # shallow: true の時は@clothes_stock経由で@kidを取得
+      @seasons = Season.all
+      @categories = Category.all
+      @sizes = Size.all
+    end
 
     def update
       if @clothes_stock.update(clothes_stock_params)
@@ -41,8 +46,9 @@ module Users
     end
 
     def destroy
+      kid = @clothes_stock.kid
       @clothes_stock.destroy!
-      redirect_to users_clothes_stock_path, notice: t("defaults.flash_message.deleted", item: ClothesStock.model_name.human)
+      redirect_to users_kid_clothes_stocks_path(kid), notice: t("defaults.flash_message.deleted", item: ClothesStock.model_name.human)
     end
 
     private
@@ -59,7 +65,8 @@ module Users
         :category_id,
         :size_id,
         :image,
-        :image_cache
+        :image_cache,
+        :remove_image
         )
     end
   end

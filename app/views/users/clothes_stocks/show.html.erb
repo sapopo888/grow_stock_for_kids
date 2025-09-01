@@ -3,22 +3,36 @@
 
     <div class='flex flex-col rounded shadow-lg p-16'>
       <div class='flex'>
-        <div class='flex flex-col'>
+        <div class='flex flex-col text-center'>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>ID</label>
-            <%= @clothes_stock.id %>
-          </span>
-          <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>季節</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.season') %>
+            </label>
             <%= @clothes_stock.season.name %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>カテゴリー</label>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.category') %>
+            </label>
             <%= @clothes_stock.category.name %>
           </span>
           <span class='flex flex-col mb-2'>
-            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>コメント</label>
-            <%= @clothes_stock.comment %>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.comment') %>
+            </label>
+            <%= simple_format(@clothes_stock.comment) %>
+          </span>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.created_at') %>
+            </label>
+            <%= l @clothes_stock.created_at, format: :default %>
+          </span>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
+              <%= t('clothes_stock.show.updated_at') %>
+            </label>
+            <%= l @clothes_stock.updated_at, format: :default %>
           </span>
         </div>
         <div class='ml-8'>
@@ -26,11 +40,21 @@
         </div>
       </div>
 
-      <div class='flex mt-8 justify-end space-x-1'>
-        <p><%= link_to '編集', edit_users_clothes_stock_path(@clothes_stock), class: 'rounded-md bg-green-500 hover:bg-green-600 text-white px-4 py-1 font-semibold shadow' %></p>
-        <p><%= link_to '削除', users_clothes_stock_path(@clothes_stock), data: { turbo_method: :delete, confirm_turbo: '本当に削除しますか？' }, class: 'rounded-md bg-red-500 hover:bg-red-600 text-white px-4 py-1 font-semibold shadow' %></p>
-      </div>
+      <div class="flex mt-8 items-center justify-between">
+        <!-- 左端にID -->
+        <p class="px-3 py-0.5 border rounded-lg border-gray-500 bg-gray-500 text-white">
+          ID: <%= @clothes_stock.id %>
+        </p>
 
+        <!-- 右端にボタン -->
+        <div class="flex space-x-2">
+          <%= link_to t('defaults.edit'), edit_users_clothes_stock_path(@clothes_stock),
+                      class: 'rounded-md bg-green-500 hover:bg-green-600 text-white px-4 py-1 font-semibold shadow' %>
+          <%= link_to t('defaults.delete'), users_clothes_stock_path(@clothes_stock),
+                      data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' },
+                      class: 'rounded-md bg-red-500 hover:bg-red-600 text-white px-4 py-1 font-semibold shadow' %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

@@ -3,6 +3,9 @@ ja:
     models:
       kid: 登録者
       clothes_stock: ストック
+      season: 季節
+      category: カテゴリー
+      size: サイズ
     attributes:
       kid:
         name: 名前
@@ -13,8 +16,13 @@ ja:
         name: カテゴリー
       size:
         name: サイズ
-      clothesstock:
+      clothes_stock:
+        name: 名前
+        season: 季節
+        category: カテゴリー
+        size: サイズ
         comment: コメント
+        image: 画像アップロード
     enums:
       kid:
         gender:
