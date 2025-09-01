@@ -41,7 +41,7 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem "carrierwave", "~> 3.0"
 gem "mini_magick"
-
+gem "kaminari"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

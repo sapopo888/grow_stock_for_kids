@@ -2,7 +2,7 @@ class Users::KidsController < ApplicationController
   before_action :authenticate_user!
 
   def all_stocks
-    @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc)
+    @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc).page(params[:page]).per(12)
   end
 
 
