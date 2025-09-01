@@ -1,6 +1,11 @@
 class Users::KidsController < ApplicationController
   before_action :authenticate_user!
 
+  def all_stocks
+    @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc)
+  end
+
+
   def index
     @kids = current_user.kids.order(created_at: :asc)
   end
