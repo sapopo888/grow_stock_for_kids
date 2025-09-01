@@ -1,6 +1,9 @@
 <div class='flex justify-center items-center min-h-screen bg-gray-100'>
   <div class='w-[80%] md:w-[50%] rounded-lg shadow-lg bg-white text-gray-800 p-6'>
-    <h1 class='text-center text-xl font-semibold mb-6'><%= t('kid.index.title') %></h1>
+    <div class='flex items-enter'>
+      <h1 class='flex-1 text-center text-xl font-semibold mb-6'><%= t('kid.index.title') %></h1>
+      <%= link_to "+", new_users_kid_path, class: 'h-7 px-2 rounded bg-gray-500 text-white hover:bg-gray-600' %>
+    </div>
   
     <% if @kids.present? %>
       <table class='table-auto w-full border-collapse border border-gray-300 text-center'>
@@ -31,7 +34,7 @@
                   <!-- ストック数を中央よせ -->
                   <span class='flex-1 text-center'><%= "#{kid.clothes_stocks.count}個" %></span>
                   <!-- ボタンは右端 -->
-                  <%= link_to "+", new_users_kid_clothes_stock_path(kid), class: 'px-2 py-1 rounded bg-orange-500 text-white hover:bg-orange-600' %>
+                  <%= link_to "+", new_users_kid_clothes_stock_path(kid), class: 'h-7 px-2 rounded bg-orange-500 text-white hover:bg-orange-600' %>
                 </div>
               </td>
               <td class='border border-gray-300 px-4 py-2'>
