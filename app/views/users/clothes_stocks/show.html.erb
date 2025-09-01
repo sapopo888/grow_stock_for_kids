@@ -1,0 +1,36 @@
+<div class='flex items-center justify-center min-h-screen'>
+  <% if @clothes_stock.present? %>
+
+    <div class='flex flex-col rounded shadow-lg p-16'>
+      <div class='flex'>
+        <div class='flex flex-col'>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>ID</label>
+            <%= @clothes_stock.id %>
+          </span>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>季節</label>
+            <%= @clothes_stock.season.name %>
+          </span>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>カテゴリー</label>
+            <%= @clothes_stock.category.name %>
+          </span>
+          <span class='flex flex-col mb-2'>
+            <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>コメント</label>
+            <%= @clothes_stock.comment %>
+          </span>
+        </div>
+        <div class='ml-8'>
+          <%= image_tag @clothes_stock.image.url, width: "200", height: "200", class: 'block border border-gray-300' %>
+        </div>
+      </div>
+
+      <div class='flex mt-8 justify-end space-x-1'>
+        <p><%= link_to '編集', edit_users_clothes_stock_path(@clothes_stock), class: 'rounded-md bg-green-500 hover:bg-green-600 text-white px-4 py-1 font-semibold shadow' %></p>
+        <p><%= link_to '削除', users_clothes_stock_path(@clothes_stock), data: { turbo_method: :delete, confirm_turbo: '本当に削除しますか？' }, class: 'rounded-md bg-red-500 hover:bg-red-600 text-white px-4 py-1 font-semibold shadow' %></p>
+      </div>
+
+    </div>
+  <% end %>
+</div>

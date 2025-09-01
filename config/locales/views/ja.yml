@@ -7,6 +7,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
     confirm_delete: "本当に削除しますか？"
+    show: 詳細
     edit: 編集
     delete: 削除
   helpers:
@@ -20,7 +21,8 @@ ja:
     login: ログイン
     registered_kids: 登録者一覧
     register_kids: 登録者を追加
-    register_stocks: ストックを追加
+    registered_clothes_stocks: ストック一覧
+    register_clothes_stocks: ストックを追加
     my_page: マイページ
     san: さん
     account_detail: アカウント情報
@@ -34,6 +36,7 @@ ja:
       title: 登録者一覧
       name: 名前
       stock_count: ストック数
+      stocks_all: ストック一覧
       no_kids: 登録者はいません
       name_click_to_check_stocks: 在庫の詳細を確認するには、登録者名をクリックしてください。
     new:
@@ -44,6 +47,9 @@ ja:
       title: 登録者情報の編集
       name: 名前
       gender: 性別
+  clothes_stock:
+    index:
+      title: "#{items}のストック一覧"
   admin:
     header:
       my_page: マイページ
