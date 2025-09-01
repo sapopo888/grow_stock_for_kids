@@ -46,8 +46,9 @@ module Users
     end
 
     def destroy
+      kid = @clothes_stock.kid
       @clothes_stock.destroy!
-      redirect_to users_kid_clothes_stocks_path(@clothes_stock.kid), notice: t("defaults.flash_message.deleted", item: ClothesStock.model_name.human)
+      redirect_to users_kid_clothes_stocks_path(kid), notice: t("defaults.flash_message.deleted", item: ClothesStock.model_name.human)
     end
 
     private
