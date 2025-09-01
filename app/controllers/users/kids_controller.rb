@@ -1,8 +1,13 @@
 class Users::KidsController < ApplicationController
   before_action :authenticate_user!
 
+  def all_stocks
+    @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc)
+  end
+
+
   def index
-    @kids = current_user.kid.order(created_at: :asc)
+    @kids = current_user.kids.order(created_at: :asc)
   end
 
   def new
@@ -10,7 +15,7 @@ class Users::KidsController < ApplicationController
   end
 
   def create
-    @kid = current_user.kid.build(kid_params)
+    @kid = current_user.kids.build(kid_params)
     if @kid.save
       flash[:notice] =  t("defaults.flash_message.registered", item: Kid.model_name.human)
       redirect_to users_kids_path, status: :see_other
@@ -21,22 +26,22 @@ class Users::KidsController < ApplicationController
   end
 
   def edit
-    @kid = current_user.kid.find(params[:id])
+    @kid = current_user.kids.find(params[:id])
   end
 
   def update
-    @kid = current_user.kid.find(params[:id])
+    @kid = current_user.kids.find(params[:id])
     if @kid.update(kid_params)
-      flash[:notice] = "登録者情報が更新されました"
+      flash[:notice] = t("defaults.flash_message.updated", item: Kid.model_name.human)
       redirect_to users_kids_path, status: :see_other
     else
-      flash.now[:alert] = "登録者情報の更新に失敗しました"
+      flash.now[:alert] = t("defaults.flash_message.not_updated", item: Kid.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @kid = current_user.kid.find(params[:id])
+    @kid = current_user.kids.find(params[:id])
     @kid.destroy!
     redirect_to users_kids_path, notice: t("defaults.flash_message.deleted", item: Kid.model_name.human)
   end

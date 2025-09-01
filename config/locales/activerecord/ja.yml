@@ -2,12 +2,19 @@ ja:
   activerecord:
     models:
       kid: 登録者
+      clothes_stock: ストック
     attributes:
       kid:
         name: 名前
         gender: 性別
       season:
         name: 季節
+      category:
+        name: カテゴリー
+      size:
+        name: サイズ
+      clothesstock:
+        comment: コメント
     enums:
       kid:
         gender:
