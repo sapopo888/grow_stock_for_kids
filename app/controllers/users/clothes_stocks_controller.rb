@@ -5,7 +5,7 @@ module Users
 
     def index
       @kid = current_user.kids.find(params[:kid_id])
-      @clothes_stocks = @kid.clothes_stocks
+      @clothes_stocks = @kid.clothes_stocks.order(created_at: :desc).page(params[:page]).per(12)
     end
 
     def new
