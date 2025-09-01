@@ -2,9 +2,10 @@ module Users
   class ClothesStocksController < ApplicationController
     before_action :authenticate_user!
     before_action :set_clothes_stock, only: %i[show edit update destroy]
-
+    
     def index
-      @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc)
+      @kid = current_user.kids.find(params[:kid_id])
+      @clothes_stocks = @kid.clothes_stocks
     end
 
     def new

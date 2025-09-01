@@ -36,7 +36,7 @@
               </td>
               <td class='border border-gray-300 px-4 py-2'>
                 <div class='flex justify-center space-x-2 whitespace-nowrap'>
-                  <%= link_to t('defaults.edit'), edit_users_kid_path(kid), class: 'px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600' %>
+                  <%= link_to t('kid.index.stocks_all'), users_kid_clothes_stocks_path(kid), class: 'px-3 py-1 rounded bg-green-500 text-white hover:bg-green-600' %>
                   <%= link_to t('defaults.delete'), users_kid_path(kid), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete')}, class: 'px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600' %>
                 </div>
               </td>
