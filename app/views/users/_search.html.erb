@@ -1,0 +1,5 @@
+<%= search_form_for @q, url: url do |f| %>
+  <%= f.label :kid_name_or_season_name_or_category_name_or_size_name_or_comment_cont, "キーワード検索" %>
+  <%= f.search_field :kid_name_or_season_name_or_category_name_or_size_name_or_comment_cont, placeholder: '検索ワード' %>
+  <%= f.submit '検索', class: 'w-full border border-gray-400 hover:border-gray-500 px-4 py-1 rounded bg-blue-200 hover:bg-blue-300'%>
+<% end %>
