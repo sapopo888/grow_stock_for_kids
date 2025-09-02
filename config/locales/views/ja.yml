@@ -15,7 +15,12 @@ ja:
       create: 登録する
       submit: 保存
       update: 更新
+      search: 検索
     label:
+      kid: 名前
+      season: 季節
+      category: カテゴリー
+      size: サイズ
   header:
     sign_up_for: アカウント登録
     login: ログイン
@@ -48,9 +53,13 @@ ja:
       title: 登録者情報の編集
       name: 名前
       gender: 性別
+    all_stocks:
+      title: 全ストック一覧
+    message:
+      no_clothes_stocks: ストックがありません
   clothes_stock:
     index:
-      title: "#{items}のストック一覧"
+      title: "%{items}のストック一覧"
     new:
       title: ストック追加
       please_select: 選択してください

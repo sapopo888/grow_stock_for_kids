@@ -1,6 +1,6 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
   <div class="w-[95%] md:w-[70%] rounded-lg shadow-lg bg-white text-gray-800 p-6">
-    <h1 class="text-center text-xl font-bold mb-8">Clothes Stock 一覧</h1>
+    <h1 class="text-center text-xl font-bold mb-8"><%= t('kid.all_stocks.title') %></h1>
 
     <%= render 'users/search', q: @q, url: users_kids_all_stocks_path %>
 
@@ -27,7 +27,7 @@
       </div>
       <%= paginate @clothes_stocks %>
     <% else %>
-      <p class="text-center text-gray-500 mt-6">まだClothes Stockがありません</p>
+      <p class="text-center text-gray-500 mt-6"><%= t('kid.message.no_clothes_stocks') %></p>
     <% end %>
   </div>
 </div>
