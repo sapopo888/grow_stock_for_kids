@@ -2,12 +2,12 @@
   <div class="bg-white shadow-md rounded-2xl px-6 py-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       
-    <% if url === users_kids_all_stocks_path %>
-      <!-- 名前 -->
-      <%= f.label :kid %>
-      <%= f.select :kid_id_eq, @kid.pluck(:name, :id), { include_blank: "選択してください" },
-        class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
-    <% end %>
+      <% if url === users_kids_all_stocks_path %>
+        <!-- 名前 -->
+        <%= f.label :kid %>
+        <%= f.select :kid_id_eq, @kid.pluck(:name, :id), { include_blank: "選択してください" },
+          class: "w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" %>
+      <% end %>
 
       <!-- 季節 -->
       <%= f.label :season %>
