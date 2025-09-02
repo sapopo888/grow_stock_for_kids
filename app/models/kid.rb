@@ -7,8 +7,4 @@ class Kid < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     [ "name", "id" ]
   end
-
-  def self.ransackable_associations(auth_object = nil)
-    [ "clothes_stock" ]
-  end
 end
