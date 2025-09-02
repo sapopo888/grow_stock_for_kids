@@ -2,7 +2,8 @@ class Users::KidsController < ApplicationController
   before_action :authenticate_user!
 
   def all_stocks
-    @clothes_stocks = current_user.clothes_stocks.includes(:kid).order(created_at: :desc).page(params[:page]).per(12)
+    @q = current_user.clothes_stocks.includes(:kid).ransack(params[:q])
+    @clothes_stocks = @q.result(distinct: true).page(params[:page]).per(12).order(created_at: :desc)
   end
 
 
