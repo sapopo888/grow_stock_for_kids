@@ -3,9 +3,18 @@ module Users
     before_action :authenticate_user!
     before_action :set_clothes_stock, only: %i[show edit update destroy]
 
+    # def index
+    #   @kid = current_user.kids.find(params[:kid_id])
+    #   @clothes_stocks = @kid.clothes_stocks.order(created_at: :desc).page(params[:page]).per(12)
+    # end
+
     def index
       @kid = current_user.kids.find(params[:kid_id])
-      @clothes_stocks = @kid.clothes_stocks.order(created_at: :desc).page(params[:page]).per(12)
+      @q = @kid.clothes_stocks.ransack(params[:q])
+      @clothes_stocks = @q.result(distinct: true).page(params[:page]).per(12).order(created_at: :desc)
+      @season = Season.all
+      @category = Category.all
+      @size = Size.all
     end
 
     def new
