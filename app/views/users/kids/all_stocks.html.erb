@@ -16,7 +16,7 @@
               <p class="text-sm text-gray-500">
                 <%= link_to "ID: #{clothes_stock.id}", users_clothes_stock_path(clothes_stock), class: "text-blue-600 hover:underline" %>
               </p>
-              <p class="font-semibold">ID<%= clothes_stock.kid.name %></p>
+              <p class="font-semibold"><%= clothes_stock.kid.name %></p>
               <p class="text-sm text-gray-700"><%= clothes_stock.season.name %></p>
               <p class="text-sm text-gray-700"><%= clothes_stock.category.name %></p>
               <p class="text-sm text-gray-700"><%= clothes_stock.size.name %></p>

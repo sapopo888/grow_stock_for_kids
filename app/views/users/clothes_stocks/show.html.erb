@@ -20,7 +20,11 @@
             <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
               <%= t('clothes_stock.show.comment') %>
             </label>
-            <%= simple_format(@clothes_stock.comment) %>
+            <% if @clothes_stock.comment.present?%>
+              <%= simple_format(@clothes_stock.comment) %>
+            <% else %>
+              -
+            <% end %>
           </span>
           <span class='flex flex-col mb-2'>
             <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
