@@ -25,7 +25,7 @@
           </div>
         <% end %>
       </div>
-      <%= paginate @clothes_stocks %>
+      <span class='text-center text-red-800'><%= paginate @clothes_stocks %></span>
     <% else %>
       <p class="text-center text-gray-500 mt-6"><%= t('kid.message.no_clothes_stocks') %></p>
     <% end %>
