@@ -12,6 +12,9 @@ module Users
       @kid = current_user.kids.find(params[:kid_id])
       @q = @kid.clothes_stocks.ransack(params[:q])
       @clothes_stocks = @q.result(distinct: true).page(params[:page]).per(12).order(created_at: :desc)
+      @season = Season.all
+      @category = Category.all
+      @size = Size.all
     end
 
     def new

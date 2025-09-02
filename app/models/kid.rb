@@ -5,7 +5,7 @@ class Kid < ApplicationRecord
   enum :gender, { unknown: 0, male: 1, female: 2 }
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name"]
+    ["name", "id"]
   end
 
   def self.ransackable_associations(auth_object = nil)
