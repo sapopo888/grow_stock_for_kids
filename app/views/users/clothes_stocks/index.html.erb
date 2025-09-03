@@ -1,9 +1,18 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
   <div class="w-[95%] md:w-[70%] rounded-lg shadow-lg bg-white text-gray-800 p-6">
-
-    <h1 class="text-center text-xl font-bold mb-8"><%= t('clothes_stock.index.title', items: @kid.name) %></h1>
-
-    <%= render 'users/search', q: @q, url: users_kid_clothes_stocks_path %>
+    <div class='flex justify-center items-start'>
+      <h1 class="flex-1 text-center text-xl font-bold mb-8"><%= t('clothes_stock.index.title', items: @kid.name) %></h1>
+        <div class='dropdown-container relative inline-block ml-auto'>
+          <button class="inline-flex items-center justify-center gap-x-1.5 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-6 border border-gray-400 rounded-md p-0.5">
+              <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <ul class="dropdown-menu absolute right-0 w-80 md:w-120 origin-top-right rounded-md ring-1 ring-white/10" style= 'display: none;'>
+            <%= render 'users/search', q: @q, url: users_kid_clothes_stocks_path %>
+          </ul>
+        </div>
+    </div>
 
     <% if @clothes_stocks.present? %>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-4">
