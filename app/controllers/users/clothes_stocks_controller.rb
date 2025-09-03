@@ -44,9 +44,12 @@ module Users
     end
 
     def update
+      @kid = @clothes_stock.kid
       if @clothes_stock.update(clothes_stock_params)
         redirect_to users_clothes_stock_path, notice: t("defaults.flash_message.updated", item: ClothesStock.model_name.human), status: :see_other
       else
+        # バリデーションエラー時にフォーム表示用のデータを再設定
+        set_form_data
         render :edit, alert: t("defaults.flash_message.not_updated", item: ClothesStock.model_name.human), status: :unprocessable_entity
       end
     end
