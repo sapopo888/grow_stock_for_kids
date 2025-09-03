@@ -22,7 +22,13 @@ document.addEventListener("turbo:load", () => {
       // クリックしたものだけトグル
       dropdownMenu.style.display = isOpen ? "none" : "block";
     });
+    
+    // ドロップダウンメニュー内のクリックでは閉じないようにする
+    dropdownMenu.addEventListener('click', () => {
+      event.stopPropagation();
+    })
   });
+
 
   // ページのどこかをクリックしたらすべて閉じる
   document.addEventListener("click", () => {

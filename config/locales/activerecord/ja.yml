@@ -10,6 +10,7 @@ ja:
       kid:
         name: 名前
         gender: 性別
+        color: カラー
       season:
         name: 季節
       category:
@@ -29,3 +30,12 @@ ja:
           male: 男の子
           female: 女の子
           unknown: 未設定
+        color:
+          black: ブラック
+          pink: ピンク
+          blue: ブルー
+          green: グリーン
+          purple: パープル
+          orange: オレンジ
+          default: 未設定
+

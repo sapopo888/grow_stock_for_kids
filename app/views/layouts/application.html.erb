@@ -18,11 +18,11 @@
   </head>
 
   <body class='w-full md:bg-gray-100'>
-    <header class='sticky top-0'>
+    <header class='sticky top-0 z-10'>
       <% if user_signed_in? %>
         <%= render 'users/headers/signed_in' %>
       <% else %>
-        <%= render 'users/headers/not_signed_in'  %>
+        <%= render 'users/headers/not_signed_in' %>
       <% end %>
     </header>
 
