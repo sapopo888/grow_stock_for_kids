@@ -24,8 +24,11 @@ document.addEventListener("turbo:load", () => {
     });
     
     // ドロップダウンメニュー内のクリックでは閉じないようにする
-    dropdownMenu.addEventListener('click', () => {
-      event.stopPropagation();
+    dropdownMenu.addEventListener('click', (event) => {
+      // ログアウトリンクの場合は伝播を止めない（Turboが動作するため）
+      if (!event.target.closet('[data-turbo-method]')) {
+        event.stopPropagation();
+      }
     })
   });
 
