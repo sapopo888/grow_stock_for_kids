@@ -8,12 +8,17 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
         <% @clothes_stocks.each do |clothes_stock| %>
           <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col items-center">
-            <div class='flex space-x-4'>
+            <div class='flex justify-between w-full'>
 
-              <div class="text-center space-y-1">
-                <p class="text-sm text-gray-500">
-                  <%= link_to "ID: #{clothes_stock.id}", users_clothes_stock_path(clothes_stock), class: "text-blue-600 hover:underline" %>
-                </p>
+              <div class="text-center space-y-1 flex-1">
+                <div class='flex items-center space-x-2 ml-8'>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 fill-<%= "#{clothes_stock.kid.color}" %>-600">
+                    <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd" />
+                  </svg>
+                  <p class="text-sm text-gray-500">
+                    <%= link_to "ID: #{clothes_stock.id}", users_clothes_stock_path(clothes_stock), class: "text-blue-600 hover:underline" %>
+                  </p>
+                </div>
                 <p class="font-semibold"><%= clothes_stock.kid.name %></p>
                 <p class="text-sm text-gray-700"><%= clothes_stock.season.name %></p>
                 <p class="text-sm text-gray-700"><%= clothes_stock.category.name %></p>
@@ -21,7 +26,9 @@
                 <p class="text-xs text-gray-500 mt-2"><%= clothes_stock.comment %></p>
               </div>
 
-              <div><%= image_tag clothes_stock.image.url, class: "w-32 h-32 object-cover rounded-lg mb-4" %></div>
+              <div class="flex-shrink-0">
+                <%= image_tag clothes_stock.image.url, class: "w-32 h-32 object-cover rounded-lg mb-4" %>
+              </div>
 
             </div>
           </div>
