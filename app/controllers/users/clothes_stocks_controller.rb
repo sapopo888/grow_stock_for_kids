@@ -3,11 +3,6 @@ module Users
     before_action :authenticate_user!
     before_action :set_clothes_stock, only: %i[show edit update destroy]
 
-    # def index
-    #   @kid = current_user.kids.find(params[:kid_id])
-    #   @clothes_stocks = @kid.clothes_stocks.order(created_at: :desc).page(params[:page]).per(12)
-    # end
-
     def index
       @kid = current_user.kids.find(params[:kid_id])
       @q = @kid.clothes_stocks.ransack(params[:q])
@@ -32,6 +27,8 @@ module Users
         flash[:notice] = t("defaults.flash_message.registered", item: ClothesStock.model_name.human)
         redirect_to users_kids_path, status: :see_other
       else
+        # バリデーションエラー時にフォーム表示用のデータを再設定
+        set_form_data
         flash.now[:alert] = t("defaults.flash_message.not_registered", item: ClothesStock.model_name.human)
         render :new, status: :unprocessable_entity
       end
@@ -61,6 +58,12 @@ module Users
     end
 
     private
+
+    def set_form_data
+      @seasons = Season.all
+      @categories = Category.all
+      @sizes = Size.all
+    end
 
     def set_clothes_stock
       @clothes_stock = current_user.clothes_stocks.find(params[:id])
