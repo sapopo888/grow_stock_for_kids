@@ -4,11 +4,6 @@
     <div class='flex flex-col rounded shadow-lg p-16'>
       <div class='flex'>
         <div class='flex flex-col text-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-6 mr-1 mb-8 <%= @clothes_stock.kid.color == "default" ? "fill-gray-400" : "fill-#{@clothes_stock.kid.color}-600"%>">
-            <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd" />
-          </svg>
-          <div class='flex'>
-            <div class='flex flex-col'>
               <span class='flex flex-col mb-2'>
                 <label for="", class='border rounded px-2 bg-gray-400 text-white text-center'>
                   <%= t('clothes_stock.show.season') %>
@@ -47,22 +42,23 @@
           <div class='ml-8'>
             <%= image_tag @clothes_stock.image.url, class: 'block w-70 h-70 border border-gray-300' %>
           </div>
-          </div>
-          </div>
       </div>
 
-      <div class="flex mt-8 items-center justify-between">
+      <div class="flex mt-8 items-center justify-between items-start">
         <!-- 左端にID -->
         <div class='flex space-x-2'>
-          <p class="px-3 py-0.5 border rounded-lg border-gray-500 bg-gray-500 text-white">
-            ID: <%= @clothes_stock.id %>
-          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-6 mr-1 mb-8 <%= @clothes_stock.kid.color == "default" ? "fill-gray-400" : "fill-#{@clothes_stock.kid.color}-600"%>">
+            <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd" />
+          </svg>
           <p class='font-semibold text-lg'><%= @clothes_stock.kid.name %></p>
         </div>
 
 
         <!-- 右端にボタン -->
         <div class="flex space-x-2">
+          <p class="px-3 py-0.5 border rounded-lg border-gray-500 bg-gray-500 text-white">
+            ID: <%= @clothes_stock.id %>
+          </p>
           <%= link_to t('defaults.edit'), edit_users_clothes_stock_path(@clothes_stock),
                       class: 'rounded-md bg-green-500 hover:bg-green-600 text-white px-4 py-1 font-semibold shadow' %>
           <%= link_to t('defaults.delete'), users_clothes_stock_path(@clothes_stock),
