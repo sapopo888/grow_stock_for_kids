@@ -1,8 +1,9 @@
 <div class='w-full h-16 pt-8 bg-blue-800'>
   <div class= 'justify-items-center md:justify-items-end'>
     <div class='space-x-2 md:space-x-4  md:mr-12 text-white'>
-      <%= link_to '会員登録',  new_user_registration_path %>
-      <%= link_to 'ログイン', new_user_session_path %>
+      <%= link_to t('header.to_top_page'), root_path, class: 'hover:text-gray-200' %>
+      <%= link_to t('header.sign_up_for'),  new_user_registration_path %>
+      <%= link_to t('header.login'), new_user_session_path %>
     </div>
   </div>
 </div>
