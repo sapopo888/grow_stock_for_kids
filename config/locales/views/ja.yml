@@ -93,6 +93,7 @@ ja:
         user_name: ユーザー名
         created_at: 登録日
         updated_at: 最終更新日
+        action: アクション
         no_user: ユーザーはいません
   time:
     formats:
