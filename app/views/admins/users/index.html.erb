@@ -1,35 +1,39 @@
-<div class='flex m-20 justify-center h-screen'>
+<div class='flex mt-20 justify-center'>
   <div class='w-full h-[80%] md:w-[60%] md:rounded-lg md:shadow-lg bg-white p-20 text-gray-800'>
-    <h1 class='text-center text-lg font-semibold'><%= t('admin.user.index.title') %></h1>
+    <h1 class='text-center text-lg font-semibold mb-8'><%= t('admin.user.index.title') %></h1>
 
-      <table class='w-full table-auto'>
-        <thead>
-          <tr class='bg-pink-100'>
-            <th>ID</th>
-            <th><%= t('admin.user.index.user_name') %></th>
-            <th><%= t('admin.user.index.created_at') %></th>
-            <th><%= t('admin.user.index.updated_at') %></th>
-            <th><%= t('admin.user.index.action') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% if @users.present? %>
-            <% @users.each do |user| %>
-              <tr>
-                <td><%= user.id %></td>
-                <td><%= user.name %></td>
-                <td class='text-center'><%= l user.created_at, format: :default  %></td>
-                <td class='text-center'><%= l user.updated_at, format: :default  %></td>
-                <td><%= link_to t('defaults.delete'), admins_user_path(user), data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete') } %></td>
-              </tr>
-              <br />
-            <% end %>
-          <% else %>
-            <%= t('admin.user.index.no_user') %>
+    <table class='w-full table-auto'>
+      <thead>
+        <tr class='bg-pink-100'>
+          <th>ID</th>
+          <th><%= t('admin.user.index.user_name') %></th>
+          <th><%= t('admin.user.index.created_at') %></th>
+          <th><%= t('admin.user.index.updated_at') %></th>
+          <th><%= t('admin.user.index.action') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @users.present? %>
+          <% @users.each do |user| %>
+            <tr class='hover:bg-gray-200'>
+              <td><%= user.id %></td>
+              <td><%= link_to user.name, admins_user_path(user), class: 'hover:text-pink-600' %></td>
+              <td class='text-center'><%= l user.created_at, format: :short  %></td>
+              <td class='text-center'><%= l user.updated_at, format: :short %></td>
+              <td>
+                <%= link_to t('defaults.delete'), admins_user_path(user),
+                    data: { turbo_method: :delete, turbo_confirm: t('defaults.confirm_delete') }, class: "ml-6 px-3 py-1 text-gray-600 hover:text-red-600" %>
+              </td>
+            </tr>
           <% end %>
-        </tbody>
-      </table>
-
-    
+        <% else %>
+          <tr>
+            <td colspan="5" class="text-center py-4">
+              <%= t('admin.user.index.no_user') %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
