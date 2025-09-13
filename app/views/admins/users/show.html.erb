@@ -1,0 +1,30 @@
+<% if @user.present? %>
+  <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <dl class="w-1/2 md:w-1/3 bg-white rounded-lg shadow p-8 space-y-4">
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <dt class="col-span-1 font-semibold text-gray-600 rounded bg-gray-200 px-2 py-1 text-center">ID</dt>
+        <dd class="col-span-2"><%= @user.id %></dd>
+      </div>
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <dt class="col-span-1 font-semibold text-gray-600 rounded bg-gray-200 px-2 py-1 text-center">名前</dt>
+        <dd class="col-span-2"><%= @user.name %></dd>
+      </div>
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <dt class="col-span-1 font-semibold text-gray-600 rounded bg-gray-200 px-2 py-1 text-center">Email</dt>
+        <dd class="col-span-2"><%= @user.email %></dd>
+      </div>
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <dt class="col-span-1 font-semibold text-gray-600 rounded bg-gray-200 px-2 py-1 text-center">登録者数</dt>
+        <dd class="col-span-2"><%= @user.kids.count %></dd>
+      </div>
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <dt class="col-span-1 font-semibold text-gray-600 rounded bg-gray-200 px-2 py-1 text-center">全ストック数</dt>
+        <dd class="col-span-2"><%= @user.clothes_stocks.count %></dd>
+      </div>
+    </dl>
+  </div>
+<% else %>
+  <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <p class="text-center text-gray-500">該当ユーザーがいません</p>
+  </div>
+<% end %>
