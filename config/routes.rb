@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   namespace :admins do
     root "dashboards#index"
     resource :dashboard, only: %i[index]
-    resources :users, only: %i[index edit update destroy]
+    resources :users, only: %i[index show edit update destroy]
     resources :seasons, only: %i[index new create edit update destroy]
     resources :sizes, only: %i[index new create edit update destroy]
     resources :categories, only: %i[index new create edit update destroy]
